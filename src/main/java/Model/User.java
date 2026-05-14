@@ -6,6 +6,7 @@ import lombok.Data;
 import java.security.AuthProvider;
 
 @Data
+@Entity
 public class User {
 
     @Id
