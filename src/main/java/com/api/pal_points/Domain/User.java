@@ -1,12 +1,11 @@
-package Model;
+package com.api.pal_points.Domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.security.AuthProvider;
-
-@Data
 @Entity
+@Table(name = "users")
+@Data
 public class User {
 
     @Id
@@ -20,7 +19,6 @@ public class User {
 
     private String password;
 
-    @Enumerated(EnumType.STRING)
     private AuthProvider provider;
 
 }
