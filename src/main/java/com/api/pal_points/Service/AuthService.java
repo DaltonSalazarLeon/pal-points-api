@@ -18,6 +18,18 @@ public class AuthService {
         this.passwordEncoder = passwordEncoder;
     }
 
+    public User login(String email, String password) {
+
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        if (!passwordEncoder.matches(password, user.getPassword())) {
+            throw new RuntimeException("Contraseña incorrecta");
+        }
+
+        return user;
+    }
+
     public User register(User user) {
 
         // verificar si ya existe
