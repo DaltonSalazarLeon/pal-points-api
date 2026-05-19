@@ -2,10 +2,7 @@ spring:
   application:
     name: pal-points
 
-  security:
-      user:
-        name: admin
-        password: admin
+
   datasource:
     url: jdbc:postgresql://aws-1-us-east-1.pooler.supabase.com:5432/postgres?sslmode=require
     username: postgres.ypqcubzwnqewqsvxpywf
